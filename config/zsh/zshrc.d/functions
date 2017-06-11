@@ -1,19 +1,52 @@
 
 
-function lineNumber {
-    grep -n "$1" | sed 's/:.*//' | head -n 1;
+# Get the line numbers of occurences of argument in second input
+#  or if no second input, then piped input
+function lineNumbers {
+	if [ -z ${2+x} ]; then
+		grep -n "$1" | cut -d : -f 1;
+	else
+		echo -e "$2" | grep -n "$1" | cut -d : -f 1;
+	fi;
 }
 
+# Output line $1 to line $2-1 of the input
+#  (input text is 3rd variable or piped input)
+function section {
+	if [ -z ${3+x} ]; then
+		head -n $2 | tail -n +$1;
+	else
+		echo "$3" | head -n $(($2-1)) | tail -n +$1;
+	fi;
+}
+
+# Mac-only stuff from here on
+if [ `uname` = 'Darwin' ]; then
+
+# Identify whether using discrete graphics card or not
 function identifyGfxCard {
-    local gfxData=`system_profiler SPDisplaysDataType`;
-    local displayLine=`echo "$gfxData" | lineNumber 'Retina LCD'`;
-    local discreteLine=`echo "$gfxData" | lineNumber 'Radeon'`;
-    if [ $displayLine -lt $discreteLine ]; then
-        echo -n "Integrated Graphics: ";
-        echo "$gfxData" | grep 'Chipset Model' | sed 's/.*: \(.*\)/\1/g' | head -n 1;
-    else
-        echo -n "Discrete Graphics: ";
-        echo "$gfxData" | grep 'Chipset Model' | sed 's/.*: \(.*\)/\1/g' | tail	 -n 1;
-    fi;
+    local gfxData=$(system_profiler SPDisplaysDataType);
+	if [ ! "$(echo $gfxData | grep 'Bus: PCIe')" ]; then
+		echo "No discrete graphics card.";
+		return 0;
+	fi;
+	local secLines=($(lineNumbers 'Chipset' "$gfxData"));
+	if [ -n "$BASH_VERSION" ]; then
+		secLines[2]=${secLines[1]};
+		secLines[1]=${secLines[0]};
+	fi;
+	local -a section;
+	section[1]=$(section ${secLines[1]} ${secLines[2]} "$gfxData");
+	section[2]=$(section ${secLines[2]} 999 "$gfxData");
+	local dispSection;
+	echo "${section[1]}" | grep 'Displays:' > /dev/null \
+		&& dispSection=1 || dispSection=2;
+	if [[ $(echo "${section[$dispSection]}" | grep 'Bus: Built-In') ]]; then
+		echo -n "Integrated graphics:";
+	else
+		echo -n "Discrete graphics:";
+	fi;
+	echo "${section[$dispSection]}"| grep 'Chipset Model'| cut -d ':' -f 2;
 }
 
+fi;
