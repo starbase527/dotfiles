@@ -1,0 +1,19 @@
+
+
+function lineNumber {
+    grep -n "$1" | sed 's/:.*//' | head -n 1;
+}
+
+function identifyGfxCard {
+    local gfxData=`system_profiler SPDisplaysDataType`;
+    local displayLine=`echo "$gfxData" | lineNumber 'Retina LCD'`;
+    local discreteLine=`echo "$gfxData" | lineNumber 'Radeon'`;
+    if [ $displayLine -lt $discreteLine ]; then
+        echo -n "Integrated Graphics: ";
+        echo "$gfxData" | grep 'Chipset Model' | sed 's/.*: \(.*\)/\1/g' | head -n 1;
+    else
+        echo -n "Discrete Graphics: ";
+        echo "$gfxData" | grep 'Chipset Model' | sed 's/.*: \(.*\)/\1/g' | tail	 -n 1;
+    fi;
+}
+

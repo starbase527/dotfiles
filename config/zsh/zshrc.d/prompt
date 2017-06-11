@@ -1,0 +1,29 @@
+
+function __git_prompt() {
+	local branch="$(git symbolic-ref --short HEAD 2> /dev/null)";
+	if [ -n "$branch" ] ; then
+		branch=" [ $branch ]";
+	fi;
+	echo -n $branch;
+}
+
+if [ -n "$BASH_VERSION" ]; then
+
+	function set_bash_prompt {
+		local  RETURN='$?';
+		local   RESET='\[$(tput sgr0)\]';
+		local     RED='\[$(tput setaf 1)\]';
+		local   GREEN='\[$(tput setaf 2)\]';
+		local    CYAN='\[$(tput setaf 6)\]';
+		export PS1="(${RETURN}) [$GREEN\u$RESET@\h $RED\W$RESET]$CYAN"'$(__git_prompt)'"$RESET $ ";
+	}
+	set_bash_prompt;
+
+elif [ -n "$ZSH_VERSION" ]; then
+
+	setopt PROMPT_SUBST
+	export PROMPT="(%?) [%F{green}%n%f@%m %F{red}%2~%f] $ ";
+	export RPROMPT='%F{cyan}$(__git_prompt)%f ';
+
+fi;
+
