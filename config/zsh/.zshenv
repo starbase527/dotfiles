@@ -8,6 +8,9 @@ elif [ -n "$ZSH_VERSION" ]; then
 	export HISTFILE="${ZDOTDIR}/history"
 fi;
 
+# Don't clutter home directory:
+export LESSHISTFILE="-";
+
 export EDITOR="nvim";
 export VISUAL="nvim";
 
