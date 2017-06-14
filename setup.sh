@@ -30,14 +30,15 @@ fi;
 
 # This part will need root permissions
 local ZSHENVFILE;
-if [ -d /etc/zsh/zshenv ]; then
+if [ -d /etc/zsh ]; then
 	ZSHENVFILE=/etc/zsh/zshenv;
 else
 	ZSHENVFILE=/etc/zshenv;
 fi;
 
 if [[ ! $(grep 'ZDOTDIR' $ZSHENVFILE) ]]; then
-	sudo echo '$ZDOTDIR=$HOME/.config/zsh' >> $ZSHENVFILE;
+	sudo echo 'ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config/zsh}"' \
+		>> $ZSHENVFILE;
 else
 	echo "You need to update zsh to respect ~/.config/zsh manually"
 fi;
