@@ -27,7 +27,6 @@ brew 'tree'
 brew 'aspell', args: ["with-lang-en", "with-lang-fr", "with-lang-ru"]
 brew 'dockutil'
 brew 'gnu-typist'
-brew 'stow'
 brew 'youtube-dl'
 
 # Hacky things
