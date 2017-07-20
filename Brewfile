@@ -3,7 +3,6 @@
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'homebrew/bundle'
-tap 'neovim/neovim'
 
 # Mac App Store Commandline
 brew 'mas'
@@ -18,7 +17,7 @@ brew 'zsh-syntax-highlighting'
 brew 'bash'
 brew 'coreutils'
 brew 'git'
-brew 'neovim/neovim/neovim'
+brew 'neovim'
 brew 'python'
 brew 'python3'
 brew 'tldr'
