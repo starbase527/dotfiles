@@ -7,6 +7,16 @@ git submodule update --init --recursive "dotbot";
 if [[ `uname` = 'Darwin' ]]; then
 echo "Beginning macOS-specific configuration...";
 
+# Install Homebrew if not installed
+echo -n "\tChecking Homebrew installation...";
+if ! $(which brew > /dev/null); then
+	echo;
+	echo "\tInstalling homebrew"
+	/usr/bin/ruby -e "$(curl -fsSL \
+		https://raw.githubusercontent.com/Homebrew/install/master/install)";
+fi;
+echo "done."
+
 # Setup minimal Dock
 if $(which dockutil > /dev/null); then
 	echo -n "\tSetting up dock... ";
@@ -27,6 +37,8 @@ if $(which dockutil > /dev/null); then
 	dockutil --add "$HOME/Downloads" \
 		--view grid --display folder --sort datemodified --after "`whoami`";
 	echo "done.";
+else
+	echo "failed.";
 fi;
 
 echo "done macOS-specific configuration.";
@@ -42,12 +54,12 @@ else
 	ZSHENVFILE=/etc/zshenv;
 fi;
 
-if [[ ! $(grep 'ZDOTDIR' $ZSHENVFILE &> /dev/null) ]]; then
+if ! $(grep 'ZDOTDIR' $ZSHENVFILE &> /dev/null) ; then
 	echo 'ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config/zsh}"' \
 		| sudo tee -a $ZSHENVFILE >> /dev/null;
 	echo "done.";
 else
-	echo;
+	echo "failed.";
 	echo "You may need to update zsh to respect ~/.config/zsh manually";
 fi;
 
