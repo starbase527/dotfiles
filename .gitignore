@@ -1,6 +1,6 @@
 
 *.DS_Store
-config/zsh/history
+config/zsh/.history
 config/git/config.local
 config/nvim/.netrwhist
 
