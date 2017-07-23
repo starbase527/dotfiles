@@ -19,7 +19,11 @@ fi;
 
 # Setup minimal Dock
 echo -n "\tSetting up dock... ";
-if $(which dockutil > /dev/null); then
+
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock orientation -string "left"
+
+if $(which dockutil > /dev/null 2>> ~/setup_log); then
 	local uni_folder="$HOME/Documents/University/";
 	uni_folder=$uni_folder/`ls $uni_folder | tail -n 1`;
 
