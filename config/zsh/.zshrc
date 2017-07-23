@@ -15,6 +15,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# ZSH Line editing: enter normal mode and press 'v' to open line in vim
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 
 # Run each separate files (env, path, etc)
 if [ -d $ZDOTDIR/zshrc.d ]; then
