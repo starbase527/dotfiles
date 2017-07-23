@@ -10,9 +10,16 @@ if ! $(which brew > /dev/null); then
 fi;
 echo "done."
 
+echo -n "\tInstalling from Brewfile...";
+if ! $(brew bundle --file=~/.dotfiles/Brewfile &> ~/brew_bundle_log); then
+	echo "failed (see ~/brew_bundle_log.)";
+else
+	echo "done.";
+fi;
+
 # Setup minimal Dock
+echo -n "\tSetting up dock... ";
 if $(which dockutil > /dev/null); then
-	echo -n "\tSetting up dock... ";
 	local uni_folder="$HOME/Documents/University/";
 	uni_folder=$uni_folder/`ls $uni_folder | tail -n 1`;
 
@@ -33,3 +40,5 @@ if $(which dockutil > /dev/null); then
 else
 	echo "failed.";
 fi;
+
+
