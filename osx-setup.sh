@@ -47,7 +47,7 @@ fi;
 
 
 # System defaults (most of this sourced from https://mths.be/macos)
-echo -n "\tSetting System defaults... ":
+echo -n "\tSetting System defaults... ";
 
 {
 set -o XTRACE # for log
