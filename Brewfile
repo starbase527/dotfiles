@@ -73,5 +73,5 @@ mas "Tweetbot",      id: 557168941
 mas "Xcode",         id: 497799835
 
 # And finally
-brew 'gcc' # Warning: Long compile time
+# brew 'gcc' # Warning: Long compile time
 
