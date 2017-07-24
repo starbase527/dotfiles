@@ -31,3 +31,20 @@ else
 	echo "You may need to update zsh to respect ~/.config/zsh manually";
 fi;
 
+# Setup git with github id
+echo "Setting up git... "
+
+local git_config=~/.config/git/config.local;
+echo -n "\n[user]\n\tname\t= \"" > $git_config;
+echo -n "\tEnter github name: ";
+read githubName;
+echo -n "$githubName\"\n\temail\t= \"" >> $git_config;
+echo -n "\tEnter github email (username if you wish to use noreply): ";
+read githubEmail;
+if ! $(echo $githubEmail | grep '@' > /dev/null); then
+	githubEmail=$githubEmail"@users.noreply.github.com";
+fi;
+echo "$githubEmail\"\n" >> $git_config;
+
+echo "done."
+
