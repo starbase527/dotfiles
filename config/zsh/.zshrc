@@ -26,16 +26,6 @@ if [ -d $ZDOTDIR/zshrc.d ]; then
 	done
 fi
 
-# If running in tmux on OS X, then connect vim to clipboard
-if uname | grep -q "Darwin"; then
-	if [[ -n "$TMUX" ]]; then
-		alias nvim='reattach-to-user-namespace nvim'
-		alias vim='reattach-to-user-namespace nvim'
-	else
-		alias vim='nvim'
-	fi
-fi
-
 # Activate more completions (from Homebrew)
 fpath=(/usr/local/share/zsh-completions $fpath)
 
