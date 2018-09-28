@@ -8,6 +8,8 @@ elif [ -n "$ZSH_VERSION" ]; then
 	export HISTFILE="${ZDOTDIR}/.history"
 fi;
 
+export LANG="fr_FR.UTF-8"
+
 # Don't clutter home directory:
 export LESSHISTFILE="-";
 
