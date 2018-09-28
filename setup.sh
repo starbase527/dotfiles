@@ -1,13 +1,11 @@
 #!/usr/bin/env zsh
 
-BASEDIR="${0:A:h}";
-cd $BASEDIR;
-git submodule update --init --recursive "dotbot";
+./install
 
 if [[ `uname` = 'Darwin' ]]; then
 echo "Beginning macOS-specific configuration...";
 
-source osx-setup.sh
+# source osx-setup.sh
 
 echo "done macOS-specific configuration.";
 fi;
@@ -45,6 +43,8 @@ if ! $(echo $githubEmail | grep '@' > /dev/null); then
 	githubEmail=$githubEmail"@users.noreply.github.com";
 fi;
 echo "$githubEmail\"\n" >> $git_config;
+echo >> $git_config;
+echo -n "\n[credential]\n\thelper\t= osxkeychain" >> $git_config;
 
 echo "done."
 
