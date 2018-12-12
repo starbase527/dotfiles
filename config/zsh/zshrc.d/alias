@@ -3,7 +3,7 @@ alias ls='ls -GF';
 
 alias vim=nvim;
 alias  vi=nvim;
-alias tmux='tmux -f "$XDG_CONFIG_HOME"/.tmux/tmux.conf'
+alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 
 alias nwh='open . -a Terminal';
 alias quicklook='qlmanage -p';

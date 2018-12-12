@@ -11,9 +11,12 @@ fi;
 export LANG="fr_FR.UTF-8"
 
 # Don't clutter home directory:
+export XDG_CONFIG_HOME="${HOME}/.config"
+
 export LESSHISTFILE="-";
 
-export INPUTRC="~/.config/readline/inputrc"
+# Make GNU readline respect XDG
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 
 export EDITOR="nvim";
 export VISUAL="nvim";
