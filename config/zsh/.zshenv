@@ -1,5 +1,5 @@
 
-export PATH=$HOME/bin:$PATH:/usr/local/gnat/bin
+export PATH=$HOME/bin:$PATH:$HOME/opt/GNAT/2018/bin
 
 if [ -n "$BASH_VERSION" ]; then
 	export CDPATH="~/sc";
