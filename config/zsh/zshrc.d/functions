@@ -1,4 +1,11 @@
 
+lastdown () {
+	if [[ $# == 1 ]]; then
+		ls -1t ~/Downloads | head -n $1 | sed "s|^|$HOME/Downloads/|"
+	else
+		ls -1t ~/Downloads | head -n 1 | sed "s|^|$HOME/Downloads/|"
+	fi
+}
 
 # Get the line numbers of occurences of argument in second input
 #  or if no second input, then piped input
