@@ -32,28 +32,14 @@ if [ `uname` = 'Darwin' ]; then
 
 # Identify whether using discrete graphics card or not
 function identifyGfxCard {
-    local gfxData=$(system_profiler SPDisplaysDataType);
-	if [ ! "$(echo $gfxData | grep 'Bus: PCIe')" ]; then
-		echo "No discrete graphics card.";
-		return 0;
-	fi;
-	local secLines=($(lineNumbers 'Chipset' "$gfxData"));
-	if [ -n "$BASH_VERSION" ]; then
-		secLines[2]=${secLines[1]};
-		secLines[1]=${secLines[0]};
-	fi;
-	local -a section;
-	section[1]=$(section ${secLines[1]} ${secLines[2]} "$gfxData");
-	section[2]=$(section ${secLines[2]} 999 "$gfxData");
-	local dispSection;
-	echo "${section[1]}" | grep 'Displays:' > /dev/null \
-		&& dispSection=1 || dispSection=2;
-	if [[ $(echo "${section[$dispSection]}" | grep 'Bus: Built-In') ]]; then
-		echo -n "Integrated graphics:";
+	chip="$(system_profiler SPDisplaysDataType | egrep '^\W+Displays:|Chipset' \
+		| awk '/Displays/ {disp=1} !disp' | tail -n 1)"
+	if echo "$chip" | grep -q Intel; then
+		int="Integrated";
 	else
-		echo -n "Discrete graphics:";
+		int="Discrete";
 	fi;
-	echo "${section[$dispSection]}"| grep 'Chipset Model'| cut -d ':' -f 2;
+	echo $chip | sed "s/ *Chipset Model/$int graphics/"
 }
 
 fi;
