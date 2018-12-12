@@ -13,6 +13,8 @@ export LANG="fr_FR.UTF-8"
 # Don't clutter home directory:
 export LESSHISTFILE="-";
 
+export INPUTRC="~/.config/readline/inputrc"
+
 export EDITOR="nvim";
 export VISUAL="nvim";
 
