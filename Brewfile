@@ -8,6 +8,7 @@ brew "aspell"
 brew "bash"
 brew "bat"
 brew "coreutils"
+brew "dockutil"
 brew "ghostscript"
 brew "git"
 brew "mas"
@@ -24,6 +25,7 @@ brew "zsh-syntax-highlighting"
 
 cask "anybar"
 cask "arq"
+cask "docker"
 cask "encryptme"
 cask "latexit"
 cask "launchbar"
@@ -36,6 +38,8 @@ cask "steam"
 cask "sublime-text"
 cask "superduper"
 cask "tex-live-utility"
+cask "vmware-fusion"
+cask "xquartz"
 
 cask "font-hack"
 cask "font-inconsolata"
@@ -48,6 +52,7 @@ mas "1Password 7",		id: 1333542190
 mas "Affinity Designer",id: 824171161
 mas "Deliveries",		id: 924726344
 mas "Fantastical 2",	id: 975937182
+mas "Ka-Block!",		id: 1335413823
 mas "Keynote",			id: 409183694
 mas "Numbers",			id: 409203825
 mas "Pages",			id: 409201541
