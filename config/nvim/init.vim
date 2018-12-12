@@ -3,6 +3,8 @@
 
 set nocompatible
 
+set lazyredraw
+
 set ruler
 set showcmd
 set number
