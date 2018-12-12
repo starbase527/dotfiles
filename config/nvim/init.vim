@@ -13,9 +13,7 @@ set relativenumber
 set splitbelow
 set splitright
 
-syntax enable
-
-set noexpandtab ts=4 sts=4 sw=4
+set path+=**
 
 " let g:jellybeans_use_term_italic = 1
 " let g:jellybeans_overrides = {
@@ -25,5 +23,18 @@ set noexpandtab ts=4 sts=4 sw=4
 set background=dark
 colorscheme solarized
 
-autocmd Filetype ada setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+syntax enable
+
+set textwidth=79
+set colorcolumn=80
+set noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+let g:python_recommended_style = 0
+
+autocmd Filetype markdown setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype ada setlocal expandtab tabstop=3 shiftwidth=3 softtabstop=3
+autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype css setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype make setlocal tabstop=8 shiftwidth=8 softtabstop=8
+autocmd Filetype haskell setlocal expandtab tabstop=8 shiftwidth=4 softtabstop=4
+autocmd Filetype haskell setlocal shiftround
 
