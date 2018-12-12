@@ -27,3 +27,9 @@ elif [ -n "$ZSH_VERSION" ]; then
 
 fi;
 
+case $TERM in
+	xterm*)
+		precmd () {print -Pn "\e]7;file://%m%/\a"}
+		;;
+esac
+
