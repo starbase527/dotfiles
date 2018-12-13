@@ -10,6 +10,12 @@ source osx-setup.sh
 echo "done macOS-specific configuration.";
 fi;
 
+# Switch login shell to zsh
+echo -n "Switching login shell to zsh... "
+echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells > /dev/null
+sudo chsh -s /usr/local/bin/zsh `whoami`
+echo "done."
+
 # Make zsh put its configuration files in ~/.config
 # This part will need root permissions
 echo -n "Updating zsh to use ~/.config... "
