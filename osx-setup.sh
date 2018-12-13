@@ -22,6 +22,7 @@ echo -n "\tSetting up dock... ";
 
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock orientation -string "left"
+defaults write com.apple.dock "show-process-indicators" -bool false
 
 if $(which dockutil > /dev/null 2>> ~/setup_log); then
 	dockutil --remove all --no-restart;
@@ -48,6 +49,11 @@ echo -n "\tSetting System defaults... ";
 
 {
 set -o XTRACE # for log
+# Some misc. system-wide stuff
+defaults write -g NSPreferredWebServices -dict NSWebServicesProviderWebSearch '{NSDefaultDisplayName = DuckDuckGo; NSProviderIdentifier = "com.duckduckgo"; }'
+defaults write -g AppleAccentColor -int 1
+defaults write -g AppleHighlightColor "1.000000 0.874510 0.701961 Orange"
+
 # Language/Text formats
 defaults write NSGlobalDomain AppleLanguages -array "fr-FR" "en-GB" "ru" "en";
 defaults write NSGlobalDomain AppleLocale -string "fr_FR@currency=AUD";
@@ -155,6 +161,13 @@ defaults write com.apple.Spotlight orderedItems -array \
 	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}'
 
 # TODO: Mac App Store
+
+# Set computer name
+echo "Setting hostname, computer name..."
+sudo scutil --set HostName
+sudo scutil --set LocalHostName
+sudo scutil --set ComputerName
+echo "done."
 
 set +o XTRACE
 } &>> ~/setup_log
