@@ -5,7 +5,7 @@
 if [[ `uname` = 'Darwin' ]]; then
 echo "Beginning macOS-specific configuration...";
 
-# source osx-setup.sh
+source osx-setup.sh
 
 echo "done macOS-specific configuration.";
 fi;
