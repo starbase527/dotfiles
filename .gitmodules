@@ -1,3 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "terminal-solarized"]
+	path = terminal-solarized
+	url = https://github.com/tomislav/osx-terminal.app-colors-solarized

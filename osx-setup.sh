@@ -123,6 +123,11 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WekK
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true;
 
 # TODO: Terminal
+open -ag Terminal "terminal-solarized/Solarized Dark.terminal"
+open -ag Terminal "terminal-solarized/Solarized Light.terminal"
+
+defaults write com.apple.Terminal "Default Window Settings" "Solarized Dark"
+defaults write com.apple.Terminal "Startup Window Settings" "Solarized Dark"
 
 # Spotlight
 defaults write com.apple.Spotlight orderedItems -array \
