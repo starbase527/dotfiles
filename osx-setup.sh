@@ -17,6 +17,9 @@ else
 	echo "done.";
 fi;
 
+# Create shortcut directory
+mkdir ~/sc
+
 # Setup minimal Dock
 echo -n "\tSetting up dock... ";
 
@@ -162,14 +165,15 @@ defaults write com.apple.Spotlight orderedItems -array \
 
 # TODO: Mac App Store
 
+set +o XTRACE
+} &>> ~/setup_log
+
 # Set computer name
-echo "Setting hostname, computer name..."
+echo "Setting hostname, computer name..." | tee -a ~/setup_log
 sudo scutil --set HostName
 sudo scutil --set LocalHostName
 sudo scutil --set ComputerName
-echo "done."
+echo "done." | tee -a ~/setup_log
 
-set +o XTRACE
-} &>> ~/setup_log
 echo "done (check ~/setup_log for errors).";
 
