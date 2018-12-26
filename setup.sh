@@ -27,7 +27,7 @@ else
 fi;
 
 if ! $(grep 'ZDOTDIR' $ZSHENVFILE &> /dev/null) ; then
-	echo 'ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config/zsh}"' \
+	echo 'ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"' \
 		| sudo tee -a $ZSHENVFILE >> /dev/null;
 	echo "done.";
 else
