@@ -5,7 +5,7 @@ if [ -n "$BASH_VERSION" ]; then
 	export CDPATH="~/sc";
 elif [ -n "$ZSH_VERSION" ]; then
 	export cdpath=(. ~/sc)
-	export HISTFILE="${ZDOTDIR}/.history"
+	export HISTFILE="${ZDOTDIR}/histfile"
 fi;
 
 export LANG="fr_FR.UTF-8"
