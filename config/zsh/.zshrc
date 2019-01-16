@@ -1,5 +1,4 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.config/zsh/histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory autocd extendedglob
@@ -28,8 +27,16 @@ if [ -d $ZDOTDIR/zshrc.d ]; then
 fi
 
 # Activate more completions (from Homebrew)
-fpath=(/usr/local/share/zsh-completions $fpath)
+if [ -d $PACKAGE_PREFIX/share/zsh-completions ]; then
+	fpath=($PACKAGE_PREFIX/share/zsh-completions $fpath)
+elif [ -d $PACKAGE_PREFIX/share/zsh/plugins/zsh-completions ]; then
+	fpath=($PACKAGE_PREFIX/share/zsh/plugins/zsh-completions $fpath)
+fi;
 
 # Activate zsh syntax highlighting (from Homebrew)
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -d $PACKAGE_PREFIX/share/zsh-syntax-highlighting ]; then
+	source $PACKAGE_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [ -d $PACKAGE_PREFIX/share/zsh/plugins/zsh-syntax-highlighting ]; then
+	source $PACKAGE_PREFIX/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi;
 
