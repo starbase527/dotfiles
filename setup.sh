@@ -11,9 +11,16 @@ echo "done macOS-specific configuration.";
 fi;
 
 # Switch login shell to zsh
+if [ -x /usr/local/bin/zsh ]; then
+	login_shell=/usr/local/bin/zsh
+else
+	login_shell="$(which zsh)"
+fi;
 echo -n "Switching login shell to zsh... "
-echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells > /dev/null
-sudo chsh -s /usr/local/bin/zsh `whoami`
+if ! grep -q "$login_shell" /etc/shells; then
+	echo "$login_shell" | sudo tee -a /etc/shells > /dev/null
+fi;
+sudo chsh -s "$login_shell" "$USER"
 echo "done."
 
 # Make zsh put its configuration files in ~/.config
@@ -39,6 +46,7 @@ fi;
 echo "Setting up git... "
 
 local git_config=~/.config/git/config.local;
+mkdir -p $(dirname "$git_config")
 echo -n "\n[user]\n\tname\t= \"" > $git_config;
 echo -n "\tEnter github name: ";
 read githubName;
