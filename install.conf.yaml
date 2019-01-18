@@ -9,4 +9,7 @@
 - link:
     ~/.bash_profile:
     ~/.config:
+    ~/.local/bin:
+        path: local/bin
+        create: true
 
