@@ -8,3 +8,5 @@ alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 alias nwh='open . -a Terminal';
 alias quicklook='qlmanage -p';
 
+alias mosh='mosh-alias.sh'
+
