@@ -1,0 +1,8 @@
+
+export PATH=$HOME/.local/bin:$PATH
+
+GNAT_PATH="$HOME/opt/GNAT/2018/bin";
+if [ -d $GNAT_PATH ]; then
+	PATH=$PATH:$GNAT_PATH
+fi;
+

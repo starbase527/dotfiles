@@ -6,13 +6,6 @@ else
 fi;
 export PACKAGE_PREFIX
 
-export PATH=$HOME/.local/bin:$PATH
-
-GNAT_PATH="$HOME/opt/GNAT/2018/bin";
-if [ -d $GNAT_PATH ]; then
-	PATH=$PATH:$GNAT_PATH
-fi;
-
 if [ -n "$BASH_VERSION" ]; then
 	export CDPATH="~/sc";
 elif [ -n "$ZSH_VERSION" ]; then
