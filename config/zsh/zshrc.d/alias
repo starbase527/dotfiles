@@ -1,5 +1,13 @@
 
-alias ls='ls -GF';
+if [ `uname` = 'Darwin' ]; then
+
+	alias ls='ls -GF';
+
+elif [ `uname` = 'Linux' ]; then
+
+	alias ls='ls -F --color';
+
+fi;
 
 alias vim=nvim;
 alias  vi=nvim;
