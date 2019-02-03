@@ -2,6 +2,8 @@
 if [ `uname` = 'Darwin' ]; then
 
 	alias ls='ls -GF';
+	alias nwh='open . -a Terminal';
+	alias quicklook='qlmanage -px &> /dev/null';
 
 elif [ `uname` = 'Linux' ]; then
 
@@ -12,9 +14,6 @@ fi;
 alias vim=nvim;
 alias  vi=nvim;
 alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
-
-alias nwh='open . -a Terminal';
-alias quicklook='qlmanage -p';
 
 alias mosh='mosh-alias.sh'
 
