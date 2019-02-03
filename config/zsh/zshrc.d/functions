@@ -1,10 +1,23 @@
 
+function ls_date_added {
+	mdls -name kMDItemFSName -name kMDItemDateAdded -raw ${1:-.}/* | \
+		tr '\0' '\n' | \
+		paste - - | \
+		sort -r | \
+		cut -c27-
+}
+
 lastdown () {
-	if [[ $# == 1 ]]; then
-		ls -1t ~/Downloads | head -n $1 | sed "s|^|$HOME/Downloads/|"
-	else
-		ls -1t ~/Downloads | head -n 1 | sed "s|^|$HOME/Downloads/|"
-	fi
+	local out_format='\n'
+	[[ -p /dev/stdout ]] && out_format='\0'
+	ls_date_added "$HOME/Downloads" | \
+		head -n ${1:-1} | \
+		lam -s "$HOME/Downloads/" - | \
+		tr '\n' $out_format
+}
+
+lastdownhere () {
+	lastdown $1 | xargs -0 -I {} mv {} ./
 }
 
 # Get the line numbers of occurences of argument in second input
