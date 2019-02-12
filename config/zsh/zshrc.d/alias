@@ -17,3 +17,5 @@ alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 
 alias mosh='mosh-alias.sh'
 
+alias man-nowrap='MANPAGER="less -S" man'
+
