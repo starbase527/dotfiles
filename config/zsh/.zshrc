@@ -19,6 +19,18 @@ compinit
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
+# Better history navigation
+bindkey '^r' history-incremental-search-backward
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey -M vicmd 'k' up-line-or-beginning-search
+bindkey -M viins '^[[A' up-line-or-beginning-search # ↑ in insert mode
+bindkey -M vicmd 'j' down-line-or-beginning-search
+bindkey -M viins '^[[B' down-line-or-beginning-search # ↓ in insert mode
+# but note that arrows will do single forwards/back in normal mode
+
 # Run each separate files (env, path, etc)
 if [ -d $ZDOTDIR/zshrc.d ]; then
 	for file in $ZDOTDIR/zshrc.d/*; do
