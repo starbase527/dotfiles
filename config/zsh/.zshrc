@@ -31,6 +31,11 @@ bindkey -M vicmd 'j' down-line-or-beginning-search
 bindkey -M viins '^[[B' down-line-or-beginning-search # ↓ in insert mode
 # but note that arrows will do single forwards/back in normal mode
 
+# ZSH help
+autoload -Uz run-help
+unalias run-help
+alias help=run-help
+
 # Run each separate files (env, path, etc)
 if [ -d $ZDOTDIR/zshrc.d ]; then
 	for file in $ZDOTDIR/zshrc.d/*; do
