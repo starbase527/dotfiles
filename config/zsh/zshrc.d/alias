@@ -14,6 +14,7 @@ fi;
 alias vim=nvim;
 alias  vi=nvim;
 alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
+alias gdb='gdb -nh -x "$XDG_CONFIG_HOME"/gdb/init'
 
 alias mosh='mosh-alias.sh'
 

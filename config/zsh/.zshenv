@@ -23,6 +23,7 @@ export LESSHISTFILE="-";
 
 # Make GNU readline respect XDG
 export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+export RLWRAP_HOME="$XDG_DATA_HOME/rlwrap"
 
 export PLATFORMIO_HOME_DIR="$XDG_DATA_HOME/platformio"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
