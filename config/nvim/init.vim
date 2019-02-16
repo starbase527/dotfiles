@@ -34,3 +34,6 @@ autocmd Filetype haskell setlocal shiftround
 autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype css setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
+" Kaymappings
+nnoremap <silent> <F4> :set cursorline!<CR> " Toggle highlighting current line
+
