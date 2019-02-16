@@ -1,0 +1,9 @@
+
+# If on Mac, apply SIP workaround
+# (needs python to check environment)
+python
+import os
+if os.uname()[0] == 'Darwin':
+	gdb.execute('set startup-with-shell off')
+end
+
