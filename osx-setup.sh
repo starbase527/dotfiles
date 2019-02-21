@@ -24,9 +24,6 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock orientation -string "left"
 
 if $(which dockutil > /dev/null 2>> ~/setup_log); then
-	local uni_folder="$HOME/Documents/University/";
-	uni_folder=$uni_folder/`ls $uni_folder | tail -n 1`;
-
 	dockutil --remove all --no-restart;
 
 	dockutil --add /Applications/Safari.app   \
@@ -34,10 +31,10 @@ if $(which dockutil > /dev/null 2>> ~/setup_log); then
 	dockutil --add /Applications/MailMate.app \
 		--after "Safari" --no-restart;
 
-	dockutil --add $uni_folder --no-restart \
+	dockutil --add ~/sc --no-restart \
 		--view grid --display folder --sort kind --position beginning;
 	dockutil --add "$HOME" --label "`whoami`" --no-restart \
-		--view grid --display folder --sort kind --after "$uni_folder";
+		--view grid --display folder --sort kind --after "sc";
 	dockutil --add "$HOME/Downloads" \
 		--view grid --display folder --sort datemodified --after "`whoami`";
 	echo "done.";
