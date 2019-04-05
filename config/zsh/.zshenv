@@ -31,7 +31,8 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 
 export EDITOR="nvim";
 export VISUAL="nvim";
-export BAT_PAGER='less -RF';
+export BAT_PAGER='less -RF'; # -F may cause problems for small files if not
+                             # running more recent less than system's
 
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
