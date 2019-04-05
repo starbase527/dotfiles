@@ -6,3 +6,9 @@ if [ -d $GNAT_PATH ]; then
 	PATH=$PATH:$GNAT_PATH
 fi;
 
+# Enable python3 on MSO
+PYTHON3_MSO_PATH="/pkg/linux/anaconda3/bin"
+if [[ -d $PYTHON3_MSO_PATH ]]; then
+	export PATH="$PYTHON3_MSO_PATH:$PATH"
+fi;
+
