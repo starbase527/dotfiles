@@ -1,4 +1,9 @@
 
 [include]
-	path = ~/.config/git/config.local
+	path	= ~/.config/git/config.local
+
+[alias]
+	sl		= log --oneline
+	sla		= log --oneline --decorate --graph --all
+	slap	= log --oneline --decorate --graph --all
 
