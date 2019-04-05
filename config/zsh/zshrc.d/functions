@@ -20,6 +20,10 @@ lastdownhere () {
 	lastdown $1 | xargs -0 -I {} mv {} ./
 }
 
+context () {
+	head -$(($1+5)) $2 | tail
+}
+
 # Get the line numbers of occurences of argument in second input
 #  or if no second input, then piped input
 function lineNumbers {
