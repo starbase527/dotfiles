@@ -36,4 +36,5 @@ autocmd Filetype css setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Kaymappings
 nnoremap <silent> <F4> :set cursorline!<CR> " Toggle highlighting current line
+nnoremap <F12> :w<CR>:!make<CR>				" Save and run `make`
 
