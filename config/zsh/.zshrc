@@ -32,8 +32,8 @@ bindkey -M viins '^[[B' down-line-or-beginning-search # ↓ in insert mode
 # but note that arrows will do single forwards/back in normal mode
 
 # ZSH help
-autoload -Uz run-help
 unalias run-help
+autoload -Uz run-help
 alias help=run-help
 
 # Run each separate files (env, path, etc)
