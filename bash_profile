@@ -3,6 +3,10 @@ export LANG="fr_FR.UTF-8"
 
 set -o vi
 
+if [ -f $HOME/.config/zsh/.zshenv ]; then
+	source $HOME/.config/zsh/.zshenv;
+fi;
+
 if [ -d $HOME/.config/zsh/zshrc.d ]; then
 	for file in $HOME/.config/zsh/zshrc.d/*; do
 		source $file;
