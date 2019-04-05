@@ -41,7 +41,7 @@ urlencode() {
 case $TERM in
 	xterm*)
 		precmd () {
-			local HOSTNAME=$(print -Pn $m);
+			local HOSTNAME=$(print -Pn %m);
 			local DIRECTORY=$(urlencode "$(print -P %d)");
 			print -Pn "\e]7;"
 			print -n "file://$HOSTNAME$DIRECTORY"
