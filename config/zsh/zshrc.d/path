@@ -1,6 +1,4 @@
 
-export PATH=$HOME/.local/bin:$PATH
-
 GNAT_PATH="$HOME/opt/GNAT/2018/bin";
 if [ -d $GNAT_PATH ]; then
 	PATH=$PATH:$GNAT_PATH
@@ -11,4 +9,7 @@ PYTHON3_MSO_PATH="/pkg/linux/anaconda3/bin"
 if [[ -d $PYTHON3_MSO_PATH ]]; then
 	export PATH="$PYTHON3_MSO_PATH:$PATH"
 fi;
+
+# Do this last, so always preferred
+export PATH=$HOME/.local/bin:$PATH
 
