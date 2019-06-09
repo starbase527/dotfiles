@@ -23,6 +23,9 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_DATA_HOME="${HOME}/.local/share"
 
 export LESSHISTFILE="-";
+export TLDR_CACHE_DIR="$XDG_DATA_HOME/tldr"
+
+export STACK_ROOT="$XDG_DATA_HOME/stack"
 
 # Make GNU readline respect XDG
 export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
