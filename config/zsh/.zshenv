@@ -6,11 +6,15 @@ else
 fi;
 export PACKAGE_PREFIX
 
+# XDG Variables!!!
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_DATA_HOME="${HOME}/.local/share"
+
 if [ -n "$BASH_VERSION" ]; then
 	export CDPATH="~/sc";
 elif [ -n "$ZSH_VERSION" ]; then
 	export cdpath=(. ~/sc)
-	export HISTFILE="${ZDOTDIR}/histfile"
+	export HISTFILE="${XDG_DATA_HOME}/zsh/histfile"
 fi;
 
 export LANG="fr_FR.UTF-8"
@@ -19,9 +23,6 @@ export C_INCLUDE_PATH="$HOME/.local/include"
 export LD_LIBRARY_PATH="$HOME/.local/lib"
 
 # Don't clutter home directory:
-export XDG_CONFIG_HOME="${HOME}/.config"
-export XDG_DATA_HOME="${HOME}/.local/share"
-
 export LESSHISTFILE="-";
 export TLDR_CACHE_DIR="$XDG_DATA_HOME/tldr"
 
