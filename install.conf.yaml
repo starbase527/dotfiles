@@ -12,4 +12,7 @@
     ~/.local/bin:
         path: local/bin
         create: true
+    ~/.tldrc:
+        path: ~/.cache/tldr
+        create: true
 

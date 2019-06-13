@@ -25,10 +25,10 @@ export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 
 # Don't clutter home directory:
 export LESSHISTFILE="-";
-export TLDR_CACHE_DIR="$XDG_DATA_HOME/tldr"
 
 export MPLCONFIGDIR="$XDG_CONFIG_HOME/matplotlib"
 export STACK_ROOT="$XDG_DATA_HOME/stack"
+export TLDR_CACHE_DIR="$XDG_CACHE_HOME/tldr"
 
 # Make GNU readline respect XDG
 export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
