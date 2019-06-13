@@ -4,10 +4,13 @@ import sys
 def main():
     import atexit
     import os
+    import os.path as osp
+    from os.path import join as joinpath
     import readline
 
-    histfile = os.path.join(os.path.expanduser("~"),
-                            ".local/share/python3/history")
+    histfile = joinpath(
+                os.environ.get("XDG_CACHE_DIR", osp.expanduser("~/.cache")),
+                "python3", "history")
     try:
         readline.read_history_file(histfile)
         readline.set_history_length(10000)

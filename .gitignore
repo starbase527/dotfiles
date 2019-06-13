@@ -1,5 +1,4 @@
 
-config/zsh/histfile
 config/zsh/.zcompdump
 config/git/config.local
 config/nvim/.netrwhist

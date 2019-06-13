@@ -9,12 +9,13 @@ export PACKAGE_PREFIX
 # XDG Variables!!!
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_CACHE_HOME="${HOME}/.cache"
 
 if [ -n "$BASH_VERSION" ]; then
 	export CDPATH="~/sc";
 elif [ -n "$ZSH_VERSION" ]; then
 	export cdpath=(. ~/sc)
-	export HISTFILE="${XDG_DATA_HOME}/zsh/histfile"
+	export HISTFILE="${XDG_CACHE_HOME}/zsh/histfile"
 fi;
 
 export LANG="fr_FR.UTF-8"
@@ -30,7 +31,7 @@ export STACK_ROOT="$XDG_DATA_HOME/stack"
 
 # Make GNU readline respect XDG
 export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
-export RLWRAP_HOME="$XDG_DATA_HOME/rlwrap"
+export RLWRAP_HOME="$XDG_CACHE_HOME/rlwrap"
 
 # Python init file (sets python_history to be stored in $XDG_DATA_HOME)
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python3/startup.py"
