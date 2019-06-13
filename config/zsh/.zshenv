@@ -28,6 +28,8 @@ export LESSHISTFILE="-";
 
 export MPLCONFIGDIR="$XDG_CONFIG_HOME/matplotlib"
 export STACK_ROOT="$XDG_DATA_HOME/stack"
+
+export PERL_CPANM_HOME="$XDG_CACHE_HOME/cpanm"
 export TLDR_CACHE_DIR="$XDG_CACHE_HOME/tldr"
 
 # Make GNU readline respect XDG
