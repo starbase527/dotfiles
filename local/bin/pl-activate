@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+command -v perl > /dev/null || { echo "Can't locate perl."; exit 1; }
+
+perl -Mlocal::lib=~/.local/perl5 > /dev/null || \
+	{ echo "local::lib not installed."; exit 2; }
+
+[ "${#}" -le 1 ] || { echo "Can only take at most one argument."; exit 3; }
+
+eval $(perl -Mlocal::lib=${1:-~/.local/perl5})
+
+pl-deactivate () {
+	eval $(perl -Mlocal::lib=--deactivate-all)
+	unset -f pl-deactivate
+}
+
