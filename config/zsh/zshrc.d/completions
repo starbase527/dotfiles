@@ -1,0 +1,8 @@
+
+if [[ -z $ZSH_VERSION ]]; then
+	exit 1
+fi
+
+fpath=(~/.config/zsh/completions $fpath)
+
+
