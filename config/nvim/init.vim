@@ -33,6 +33,7 @@ autocmd Filetype haskell setlocal shiftround
 " let g:python_recommended_style = 0 " Override PEP 8 recommendation
 autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype css setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype swift setlocal textwidth=99 colorcolumn=100
 
 " Kaymappings
 nnoremap <silent> <F4> :set cursorline!<CR> " Toggle highlighting current line
