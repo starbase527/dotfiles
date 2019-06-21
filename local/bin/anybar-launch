@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+# Graphics card
+ANYBAR_PORT="$AB_GFX" open -na AnyBar
+
+# ANUVPN
+ANYBAR_PORT="$AB_ANUVPN" open -na AnyBar
+echo -n "white" | nc -4u -w0 localhost 1738;
+
+

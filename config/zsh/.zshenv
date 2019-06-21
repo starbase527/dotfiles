@@ -48,6 +48,10 @@ export VISUAL="nvim";
 export BAT_PAGER='less -RF'; # -F may cause problems for small files if not
                              # running more recent less than system's
 
+# Ports to use for AnyBar instances
+export AB_GFX=1738;
+export AB_ANUVPN=1739;
+
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 
