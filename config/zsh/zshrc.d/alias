@@ -20,6 +20,7 @@ alias cpan="echo \"Are you sure you don't want cpanm?\""
 alias re.pl=". pl-activate; re.pl; pl-deactivate"
 alias swift='PATH=/usr/bin:$PATH swift' # Swift needs system python
 
+compdef _mosh mosh-alias.sh
 alias mosh='mosh-alias.sh'
 
 alias man-nowrap='MANPAGER="less -S" man'
