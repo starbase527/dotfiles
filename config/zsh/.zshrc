@@ -57,3 +57,11 @@ elif [ -d $PACKAGE_PREFIX/share/zsh/plugins/zsh-syntax-highlighting ]; then
 	source $PACKAGE_PREFIX/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi;
 
+##
+## Finally, if creating the first login shell, run archey
+##
+if [[ ! -v SSH_TTY ]] && [[ ! -v SSH_CLIENT ]] && [[ $(uname) == "Darwin" ]];
+then
+	[[ -o login && $(ps | grep -- '-zsh' | wc -l) -lt 4 ]] && archey
+fi
+
