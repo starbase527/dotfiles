@@ -1,5 +1,5 @@
 
-GNAT_PATH="$HOME/opt/GNAT/2018/bin";
+GNAT_PATH="$HOME/opt/GNAT/2019/bin";
 if [ -d $GNAT_PATH ]; then
 	PATH=$PATH:$GNAT_PATH
 fi;
