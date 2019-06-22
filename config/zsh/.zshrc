@@ -11,8 +11,8 @@ zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' menu select=4
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit	# I've moved this to later after fpath is modified
 # End of lines added by compinstall
 
 # ZSH Line editing: enter normal mode and press 'v' to open line in vim
@@ -45,9 +45,9 @@ fi
 
 # Activate more completions (from Homebrew)
 if [ -d $PACKAGE_PREFIX/share/zsh-completions ]; then
-	fpath=($PACKAGE_PREFIX/share/zsh-completions $fpath)
+	fpath+=$PACKAGE_PREFIX/share/zsh-completions
 elif [ -d $PACKAGE_PREFIX/share/zsh/plugins/zsh-completions ]; then
-	fpath=($PACKAGE_PREFIX/share/zsh/plugins/zsh-completions $fpath)
+	fpath+=$PACKAGE_PREFIX/share/zsh/plugins/zsh-completions
 fi;
 
 # Activate zsh syntax highlighting (from Homebrew)
@@ -56,6 +56,10 @@ if [ -d $PACKAGE_PREFIX/share/zsh-syntax-highlighting ]; then
 elif [ -d $PACKAGE_PREFIX/share/zsh/plugins/zsh-syntax-highlighting ]; then
 	source $PACKAGE_PREFIX/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi;
+
+# Finally, activate completions now that everything it depends on is defined
+autoload -Uz compinit
+compinit
 
 ##
 ## Finally, if creating the first login shell, run archey
