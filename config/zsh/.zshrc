@@ -66,6 +66,8 @@ compinit
 ##
 if [[ ! -v SSH_TTY ]] && [[ ! -v SSH_CLIENT ]] && [[ $(uname) == "Darwin" ]];
 then
-	[[ -o login && $(ps | grep -- '-zsh' | wc -l) -lt 4 ]] && archey
+	if [[ -o login && $(ps | grep -- '-zsh' | wc -l) -lt 4 ]]; then
+		archey
+	fi
 fi
 
