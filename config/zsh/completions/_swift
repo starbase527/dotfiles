@@ -1,4 +1,10 @@
 #compdef swift
+
+#
+## Generated with:
+## swift package completion-tool generate-zsh-script > ~/.config/zsh/completions/_swift
+#
+
 local context state state_descr line
 typeset -A opt_args
 

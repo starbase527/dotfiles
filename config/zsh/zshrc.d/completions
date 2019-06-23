@@ -3,6 +3,14 @@ if [[ -z $ZSH_VERSION ]]; then
 	exit 1
 fi
 
+# Activate more completions (from Homebrew)
+if [ -d $PACKAGE_PREFIX/share/zsh-completions ]; then
+	fpath+=$PACKAGE_PREFIX/share/zsh-completions
+elif [ -d $PACKAGE_PREFIX/share/zsh/plugins/zsh-completions ]; then
+	fpath+=$PACKAGE_PREFIX/share/zsh/plugins/zsh-completions
+fi;
+
+# Acticate my own completions
 fpath=(~/.config/zsh/completions $fpath)
 
 

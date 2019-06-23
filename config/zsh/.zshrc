@@ -43,13 +43,6 @@ if [ -d $ZDOTDIR/zshrc.d ]; then
 	done
 fi
 
-# Activate more completions (from Homebrew)
-if [ -d $PACKAGE_PREFIX/share/zsh-completions ]; then
-	fpath+=$PACKAGE_PREFIX/share/zsh-completions
-elif [ -d $PACKAGE_PREFIX/share/zsh/plugins/zsh-completions ]; then
-	fpath+=$PACKAGE_PREFIX/share/zsh/plugins/zsh-completions
-fi;
-
 # Activate zsh syntax highlighting (from Homebrew)
 if [ -d $PACKAGE_PREFIX/share/zsh-syntax-highlighting ]; then
 	source $PACKAGE_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
