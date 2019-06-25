@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<GPS>
+  <startup file="copy_paste.py" load="TRUE"  />
+</GPS>

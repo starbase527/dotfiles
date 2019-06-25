@@ -15,4 +15,8 @@
     ~/.tldrc:
         path: ~/.cache/tldr
         create: true
+    ~/.local/share/gps/.gps:
+        path: config/gps/*
+        create: true
+        glob: true
 

@@ -43,6 +43,7 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PLATFORMIO_HOME_DIR="$XDG_DATA_HOME/platformio"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
+export GPS_HOME="$XDG_DATA_HOME/gps"
 
 export EDITOR="nvim";
 export VISUAL="nvim";
