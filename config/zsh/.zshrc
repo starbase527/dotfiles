@@ -57,9 +57,14 @@ compinit
 ##
 ## Finally, if creating the first login shell, run archey
 ##
-if [[ ! -v SSH_TTY ]] && [[ ! -v SSH_CLIENT ]] && [[ $(uname) == "Darwin" ]];
-then
-	if [[ -o login && $(ps | grep -- '-zsh' | wc -l) -lt 4 ]]; then
+if [[ $(uname) == "Darwin" && ! -v SSH_TTY && ! -v SSH_CLIENT ]]; then
+	# Count number of child processes of Terminal.app
+	# If there is only one, then display archey
+	# This is more reliable than counting number of zsh processes, as they
+	# may be running in unattached tmux sessions.
+	TERMCOUNT=$(ps -eo pid=,ppid= | awk -v ppid=$(pgrep -a Terminal) \
+		'BEGIN{count=0}$2==ppid{count++}END{print count}')
+	if [[ TERMCOUNT -lt 2 ]]; then
 		archey -l
 	fi
 fi
