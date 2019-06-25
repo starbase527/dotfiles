@@ -1,0 +1,49 @@
+#compdef emate
+
+local -a generic_subcmds=(
+	'(-h --help)'{-h,--help}'[Show usage information.]'
+)
+
+_emate() {
+	integer ret=1
+	local -A opt_args
+	local -a args
+	local -a cmds
+	args=(
+		'(-)'{-v,--verbose}'[Verbose output]'
+		'(-h --help)'{-h,--help}'[Show usage information.]'
+		'(-):commands:->cmds'
+		'(-)*:: :->mailto-args'
+	)
+	cmds=(
+		'mailto:Send an email. Body contents read from STDIN.'
+	)
+
+	_arguments -C $args[@]
+
+	case "$state" in
+		(cmds)
+			_describe -t commands 'Commands' cmds && ret=0
+			;;
+		(mailto-args)
+			# echo -n "here"
+			local -a mailtoArgs=($generic_subcmds[@])
+			mailtoArgs+=(
+				'(-f --from)'{-f,--from}'[email address for the sender]'
+				'(-t --to)'{-t,--to}'[email address to send to]'
+				'(-c --cc)'{-c,--cc}'[email addresses to add to cc]'
+				'(-b --bcc)'{-b,--bcc}'[email address to add to bcc]'
+				'(-r --replyto)'{-r,--replyto}'[email address for replies]'
+				'(-s --subject)'{-s,--subject}'[subject for email]'
+				'--header[arbitrary header formatted as "<name>: <value>"]'
+				'--send-now[send email immediately]'
+			)
+			_arguments $mailtoArgs[@] && ret=0
+			;;
+	esac
+
+	return ret;
+}
+
+_emate
+
