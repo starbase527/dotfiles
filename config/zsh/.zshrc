@@ -55,9 +55,13 @@ autoload -Uz compinit
 compinit
 
 ##
-## Finally, if creating the first login shell, run archey
+## Finally, if creating the first login shell, not in ssh and not in tmux,
+## run archey
 ##
-if [[ $(uname) == "Darwin" && ! -v SSH_TTY && ! -v SSH_CLIENT ]]; then
+if [[ $(uname) == "Darwin" && \
+	! -v SSH_TTY && \
+	! -v SSH_CLIENT && \
+	! -v TMUX ]]; then
 	# Count number of child processes of Terminal.app
 	# If there is only one, then display archey
 	# This is more reliable than counting number of zsh processes, as they
