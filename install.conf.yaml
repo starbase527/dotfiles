@@ -19,4 +19,7 @@
         path: config/gps/*
         create: true
         glob: true
+    ~/.local/bin/airport:
+        path: /System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport
+        create: true
 

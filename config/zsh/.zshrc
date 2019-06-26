@@ -69,7 +69,13 @@ if [[ $(uname) == "Darwin" && \
 	TERMCOUNT=$(ps -eo pid=,ppid= | awk -v ppid=$(pgrep -a Terminal) \
 		'BEGIN{count=0}$2==ppid{count++}END{print count}')
 	if [[ TERMCOUNT -lt 2 ]]; then
-		archey -l
+		# If connected to ANU network, don't try to get IP from eth0.me
+		SSID=$(airport -I | awk '/ SSID/{print $2}')
+		if [[ $SSID == ANU-Secure ]]; then
+			archey -l -o
+		else
+			archey -l
+		fi
 	fi
 fi
 

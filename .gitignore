@@ -7,4 +7,5 @@ config/matplotlib/tex.cache/
 config/.op
 config/openconnect
 local/bin/op
+local/bin/airport
 
