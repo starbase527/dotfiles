@@ -3,6 +3,8 @@ export LANG="fr_FR.UTF-8"
 
 set -o vi
 
+echo "WARNING: You are using bash"
+
 if [ -f $HOME/.config/zsh/.zshenv ]; then
 	source $HOME/.config/zsh/.zshenv;
 fi;
