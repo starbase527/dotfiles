@@ -13,4 +13,9 @@ fi;
 # Acticate my own completions
 fpath=(~/.config/zsh/completions $fpath)
 
+ZSHAUTO=/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -e $ZSHAUTO ]; then
+	source $ZSHAUTO
+fi
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=13"
 
