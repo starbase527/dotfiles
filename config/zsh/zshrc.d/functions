@@ -47,16 +47,4 @@ function section {
 # Mac-only stuff from here on
 if [ `uname` = 'Darwin' ]; then
 
-# Identify whether using discrete graphics card or not
-function identifyGfxCard {
-	chip="$(system_profiler SPDisplaysDataType | egrep '^\W+Displays:|Chipset' \
-		| awk '/Displays/ {disp=1} !disp' | tail -n 1)"
-	if echo "$chip" | grep -q Intel; then
-		int="Integrated";
-	else
-		int="Discrete";
-	fi;
-	echo $chip | sed "s/ *Chipset Model/$int graphics/"
-}
-
 fi;
