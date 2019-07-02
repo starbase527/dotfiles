@@ -1,6 +1,6 @@
 
 if [[ -z $ZSH_VERSION ]]; then
-	exit 1
+	return 1
 fi
 
 # Activate more completions (from Homebrew)
