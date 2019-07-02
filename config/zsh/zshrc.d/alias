@@ -11,6 +11,11 @@ elif [ `uname` = 'Linux' ]; then
 
 fi;
 
+if [[ -n $ZSH_VERSION ]]; then
+	alias -g mash='mash -t ZDOTDIR='"'"'$HOME'"'"'/.config/zsh zsh -l'
+	alias -g malice='malice -t ZDOTDIR='"'"'$HOME'"'"'/.config/zsh zsh -l'
+fi;
+
 command -v nvim > /dev/null || alias nvim=vim # If nvim not installed, use vim
 alias vim=nvim;
 alias  vi=nvim;
