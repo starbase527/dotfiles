@@ -14,7 +14,7 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 if [ -n "$BASH_VERSION" ]; then
 	export CDPATH="~/sc";
 elif [ -n "$ZSH_VERSION" ]; then
-	export cdpath=(. ~/sc)
+	[[ -d ~/sc ]] && export cdpath=(. ~/sc)
 	export HISTFILE="${XDG_CACHE_HOME}/zsh/histfile"
 fi;
 
