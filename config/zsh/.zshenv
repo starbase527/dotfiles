@@ -57,6 +57,9 @@ export AB_ANUVPN=1739;
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 
+# IDL
+export IDL_STARTUP=${HOME}/IDL/idlstartup
+
 # Colorised man pages
 # Source: https://unix.stackexchange.com/questions/119/colors-in-man-pages
 export LESS_TERMCAP_mb=$(printf "\e[1;31m")
