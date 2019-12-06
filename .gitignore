@@ -4,6 +4,7 @@ config/git/config.local
 config/nvim/.netrwhist
 config/matplotlib/fontlist*.json
 config/matplotlib/tex.cache/
+config/astropy/*.cfg
 config/.op
 config/openconnect
 local/bin/op
