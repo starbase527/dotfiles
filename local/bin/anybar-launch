@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+date
+echo "Graphics card port: $AB_GFX"
+echo "ANU VPN port: $AB_ANUVPN"
+
 # Graphics card
 ANYBAR_PORT="$AB_GFX" open -na AnyBar
 
