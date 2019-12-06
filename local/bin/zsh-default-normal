@@ -1,0 +1,13 @@
+# Sets zsh so that each shell prompt defaults to being in vi normal mode
+# Source the file, don't execute it
+# deactivate-viins will reset to defaulting to insert mode
+
+zle-line-init() {
+	zle -K vicmd
+}
+
+zle -N zle-line-init
+
+deactivate-viins() {
+	zle -D zle-line-init
+}
