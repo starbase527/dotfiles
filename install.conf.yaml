@@ -22,4 +22,7 @@
     ~/.local/bin/airport:
         path: /System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport
         create: true
+    ~/Library/LaunchAgents/:
+        glob: true
+        path: LaunchAgents/*
 
