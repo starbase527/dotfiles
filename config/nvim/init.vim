@@ -40,3 +40,8 @@ nnoremap <silent> <F4> :set cursorline!<CR> " Toggle highlighting current line
 " Save and run `make`
 nnoremap <F12> :w<CR>:make<CR>
 
+let term_theme = system('term-profile')
+if term_theme == "Solarized Light\n"
+	set background=light
+endif
+

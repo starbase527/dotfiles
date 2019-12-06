@@ -29,3 +29,6 @@ alias mosh='mosh-alias.sh'
 
 alias man-nowrap='MANPAGER="less -S" man'
 
+# Detects light terminal theme and set appropriate theme for bat
+alias bat='bat --theme="Monokai Extended$([[ "$(term-profile)" == "Solarized Light" ]] && echo " Light" || echo "")"'
+
