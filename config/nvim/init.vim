@@ -13,6 +13,8 @@ set splitright " Splitting a window will put the new window to the right
 
 set path+=** " See that youtube video
 
+set dictionary=/usr/share/dict/words " Use the default BSD dictionary
+
 set background=dark " For solarized theme
 colorscheme solarized
 
