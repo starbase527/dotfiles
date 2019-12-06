@@ -15,7 +15,6 @@ if [ -n "$BASH_VERSION" ]; then
 	export CDPATH="~/sc";
 elif [ -n "$ZSH_VERSION" ]; then
 	[[ -d ~/sc ]] && export cdpath=(. ~/sc)
-	export HISTFILE="${XDG_CACHE_HOME}/zsh/histfile"
 fi;
 
 export LANG="fr_FR.UTF-8"

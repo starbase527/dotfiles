@@ -19,6 +19,10 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
+# I have to set the HISTFILE in zshrc instead of in zshenv
+# Since Apple has decided to override it in /etc/zshrc starting in Catalina
+export HISTFILE="${XDG_CACHE_HOME}/zsh/histfile"
+
 # Better history navigation
 bindkey '^r' history-incremental-search-backward
 autoload -U up-line-or-beginning-search
