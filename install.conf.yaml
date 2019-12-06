@@ -28,4 +28,7 @@
     ~/Library/Application Support/LaunchBar/Actions/:
         glob: true
         path: LaunchBarActions/*
+    ~/Library/Services/:
+        glob: true
+        path: Services/*
 
