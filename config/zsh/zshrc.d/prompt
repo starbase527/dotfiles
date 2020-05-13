@@ -1,4 +1,6 @@
 
+command -v starship > /dev/null && eval "$(starship init zsh)" && return
+
 function __git_prompt() {
 	local branch="$(git symbolic-ref --short HEAD 2> /dev/null)";
 	if [ -n "$branch" ] ; then
