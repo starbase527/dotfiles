@@ -10,11 +10,13 @@ elif [ -d $PACKAGE_PREFIX/share/zsh/plugins/zsh-completions ]; then
 	fpath+=$PACKAGE_PREFIX/share/zsh/plugins/zsh-completions
 fi;
 
+# Set directory for zcompcache in XDG_CACHE_HOME
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
 # Acticate my own completions (BEFORE LOADING `compinit')
 fpath=(~/.config/zsh/completions $fpath)
 # Activate completions now that everything it depends on is defined
 autoload -Uz compinit
-compinit
+compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"	# Put compdump in XDG cache
 # Now compdef is available to us
 eval "$(op completion zsh)"; compdef _op op
 

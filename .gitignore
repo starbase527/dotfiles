@@ -1,5 +1,4 @@
 
-config/zsh/.zcompdump
 config/git/config.local
 config/nvim/.netrwhist
 config/matplotlib/fontlist*.json
