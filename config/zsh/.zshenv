@@ -43,6 +43,11 @@ export GPS_HOME="$XDG_DATA_HOME/gps"
 # much...
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
+# Rust-based implementation of tldr. By default uses ~/Library/...
+# Pretty cool, but it's highly configurable.
+export TEALDEER_CONFIG_DIR="$XDG_CONFIG_HOME/tealdeer"
+export TEALDEER_CACHE_DIR="$XDG_CACHE_HOME/tealdeer"
+
 export EDITOR="nvim";
 export VISUAL="nvim";
 export BAT_PAGER='less -RF'; # -F may cause problems for small files if not
