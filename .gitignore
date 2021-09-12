@@ -6,6 +6,7 @@ config/matplotlib/tex.cache/
 config/astropy/*.cfg
 config/op
 config/openconnect
+config/expressvpn
 local/bin/airport
 local/bin/jsc
 
