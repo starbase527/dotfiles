@@ -4,6 +4,7 @@ if [ `uname` = 'Darwin' ]; then
 	alias ls='ls -GF';
 	alias nwh='open . -a Terminal';
 	alias quicklook='qlmanage -px &> /dev/null';
+	alias cc='clang -ansi -Werror -Wall -Wextra';
 
 elif [ `uname` = 'Linux' ]; then
 
