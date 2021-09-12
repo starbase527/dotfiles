@@ -2,6 +2,7 @@
 - defaults:
     link:
         relink: true
+        relative: true
 
 - clean:
     ['~']
@@ -12,9 +13,6 @@
     ~/.local/bin:
         path: local/bin
         create: true
-    ~/.tldrc:
-        path: ~/.cache/tldr
-        create: true
     ~/.local/share/gps/.gps:
         path: config/gps/*
         create: true
@@ -22,10 +20,13 @@
     ~/.local/bin/airport:
         path: /System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport
         create: true
+        relative: false
     ~/Library/LaunchAgents/:
         glob: true
         path: LaunchAgents/*
+        relative: false
     ~/Library/Services/:
         glob: true
         path: Services/*
+        relative: false
 
