@@ -5,8 +5,7 @@ config/nvim/.netrwhist
 config/matplotlib/fontlist*.json
 config/matplotlib/tex.cache/
 config/astropy/*.cfg
-config/.op
+config/op
 config/openconnect
-local/bin/op
 local/bin/airport
 

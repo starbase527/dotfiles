@@ -42,7 +42,7 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-lovers"
 brew "zsh-syntax-highlighting"
-
+cask "1password-cli"
 cask "anybar"
 cask "arq"
 cask "backblaze"
