@@ -1,37 +1,24 @@
-
-tap "homebrew/core"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
+tap "homebrew/core"
 tap "homebrew/services"
 
 brew "ack"
 brew "aspell"
 brew "bash"
 brew "bat"
+brew "python@3.9"
 brew "coreutils"
-brew "cpanminus"
-brew "dockutil"
-brew "exa"
-brew "ghostscript"
 brew "git"
-brew "gnu-sed"
 brew "gnuplot"
-brew "haskell-stack"
 brew "jq"
 brew "less"
 brew "mas"
-brew "mosh"
-brew "mupdf-tools"
 brew "neovim"
 brew "openconnect"
-brew "perl"
-brew "platformio"
-brew "python"
-brew "python-yq"
-brew "rlwrap"
-brew "sl"
 brew "tldr"
+brew "subversion"
 brew "tmux"
 brew "trash"
 brew "tree"
@@ -44,54 +31,54 @@ brew "zsh-lovers"
 brew "zsh-syntax-highlighting"
 cask "1password-cli"
 cask "anybar"
-cask "arq"
 cask "backblaze"
 cask "dash"
-cask "docker"
 cask "encryptme"
 cask "epic-games"
 cask "firefox"
-cask "iina"
-cask "kaleidoscope"
-cask "latexit"
-cask "launchbar"
-cask "leech"
-cask "little-snitch"
-cask "mailmate"
-cask "makemkv"
-cask "micro-snitch"
-cask "monodraw"
-cask "moom"
-cask "pupil"
-cask "skype"
-cask "steam"
-cask "subler"
-cask "sublime-text"
-cask "superduper"
-cask "tex-live-utility"
-cask "transmit"
-cask "vmware-fusion"
-cask "xquartz"
-
 cask "font-hack"
 cask "font-inconsolata"
 cask "font-source-code-pro"
 cask "font-source-sans-pro"
 cask "font-source-serif-pro"
 cask "font-space-mono"
-
+cask "handbrake"
+cask "iina"
+cask "kaleidoscope"
+cask "latexit"
+cask "launchbar"
+cask "mactex-no-gui"
+cask "mailmate"
+cask "makemkv"
+cask "micro-snitch"
+cask "monodraw"
+cask "moom"
+cask "origin"
+cask "skype"
+cask "soundsource"
+cask "steam"
+cask "sublime-text"
+cask "superduper"
+cask "tex-live-utility"
+cask "transmit"
+cask "vlc"
+cask "vmware-fusion"
+cask "xquartz"
+cask "zoom"
 mas "1Password 7", id: 1333542190
 mas "Affinity Designer", id: 824171161
+mas "Amphetamine", id: 937984704
 mas "DaisyDisk", id: 411643860
+mas "Developer", id: 640199958
 mas "Fantastical", id: 975937182
-mas "Instapaper", id: 1481302432
+mas "Instapaper", id: 288545208
+mas "Instapaper Save", id: 1481302432
 mas "Ka-Block!", id: 1335413823
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Playgrounds", id: 1496833156
 mas "StopTheMadness", id: 1376402589
-mas "ToothFairy", id: 1191449274
 mas "Tweetbot", id: 1384080005
 mas "Vimari", id: 1480933944
 mas "Xcode", id: 497799835
-
