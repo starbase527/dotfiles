@@ -1,25 +1,54 @@
 <?xml version="1.0"?>
 <Prefs>
   <pref name="SPARK/user_profile" >Basic</pref>
+  <pref name="Messages-File-Regexp-Index" > 21</pref>
   <pref name="General-Charset" >ISO-8859-1</pref>
+  <pref name="Src-Editor-Keywords-Variant" >DEFAULT@rgb(195,151,216)@rgba(0,0,0,0)</pref>
   <pref name="Editor/C &amp; C++:Clang/Show diagnostics" >editor_and_locations</pref>
-  <pref name="Src-Editor-Reference-Style" >Menlo 11@rgb(0,0,0)@rgb(255,255,255)</pref>
+  <pref name="Src-Editor-Reference-Style" >Menlo 11@rgb(222,222,222)@rgb(0,0,0)</pref>
   <pref name="system-menus" >TRUE</pref>
-  <pref name="Debugger-Line-With-Breakpoint" >rgba(0,0,255,0.30196078431399997)</pref>
-  <pref name="Src-Editor-Ephemeral-Simple" >DEFAULT@rgba(0,0,0,0)@rgba(134,134,134,0.35294117647099998)</pref>
+  <pref name="Debugger-Line-With-Breakpoint" >rgb(190,191,196)</pref>
+  <pref name="Src-Editor-Ephemeral-Simple" >DEFAULT@rgba(0,0,0,0)@rgba(63,63,63,0.5)</pref>
+  <pref name="Editor/Fonts &amp; Colors:General/comment_notes" >DEFAULT@rgb(144,122,142)@rgba(0,0,0,0)</pref>
   <pref name="Gtk-Theme-Custom-CSS" >
-@define-color editor_bg_color #ffffff;
-@define-color editor_fg_color #000000;
-@define-color editor_readonly_bg_color #e0e0e0;
-@define-color theme_selected_bg_color #4a90d9;
+@define-color editor_bg_color #000000;
+@define-color editor_fg_color #dedede;
+@define-color editor_readonly_bg_color #2e3436;
+@define-color theme_selected_bg_color #dedede;
 @define-color theme_selected_fg_color #000000;
 
-GtkTextView { -GtkWidget-cursor-color: #000000; }
+GtkTextView { -GtkWidget-cursor-color: #9f9f9f; }
 </pref>
-  <pref name="Src-Editor-Current-Block-Color" >rgb(226,226,226)</pref>
+  <pref name="Diff-Change-Color" >rgb(107,73,19)</pref>
+  <pref name="Low-Importance-Messages-Highlight" >rgba(191,188,64,0.19607843137299999)</pref>
+  <pref name="Horizontal-Diff-Change-Color" >rgb(143,89,2)</pref>
+  <pref name="Src-Editor-Current-Block-Color" >rgba(158,158,158,0.5)</pref>
+  <pref name="Debugger-Editor-Current-Line" >rgba(58,71,54,0.59999999999999998)</pref>
+  <pref name="Editor/Fonts &amp; Colors:General/multicursor_selection_color" >rgb(50,114,162)</pref>
+  <pref name="Src-Editor-Aspects-Variant" >DEFAULT@rgb(231,140,69)@rgba(0,0,0,0)</pref>
+  <pref name="Src-Editor-Numbers-Variant" >DEFAULT@rgb(231,140,69)@rgba(0,0,0,0)</pref>
+  <pref name="Search-Src-Highlight-Color" >rgb(0,113,128)</pref>
+  <pref name="Diff-Append-Color" >rgb(38,68,36)</pref>
+  <pref name="Browsers-Bg-Color" >rgb(0,0,0)</pref>
+  <pref name="Src-Editor-Ephemeral-Smart" >DEFAULT@rgba(0,0,0,0)@rgba(195,151,216,0.20000000000000001)</pref>
+  <pref name="Editor/Fonts &amp; Colors:General/read_only_color" >rgb(46,52,54)</pref>
   <pref name="show-advanced-preferences" >TRUE</pref>
-  <pref name="/Color-Theme" >Default</pref>
-  <pref name="Src-Editor-Aspects-Keywords-Variant" >DEFAULT@rgb(0,109,151)@rgba(0,0,0,0)</pref>
-  <pref name="Src-Editor-Code-Annotations-Variant-18" >DEFAULT@rgba(0,0,0,0)@rgb(224,224,224)</pref>
-  <pref name="GPS6-Gtk-Theme-Name" >Adwaita</pref>
+  <pref name="Medium-Importance-Messages-Highlight" >rgb(85,52,18)</pref>
+  <pref name="/Color-Theme" >Tomorrow Night - Bright</pref>
+  <pref name="Src-Editor-Aspects-Keywords-Variant" >DEFAULT@rgb(173,127,168)@rgba(0,0,0,0)</pref>
+  <pref name="Src-Editor-Type-Variant" >DEFAULT@rgb(231,197,71)@rgba(0,0,0,0)</pref>
+  <pref name="Command-Windows-Background-Color" >rgb(38,38,38)</pref>
+  <pref name="Src-Editor-Strings-Variant" >DEFAULT@rgb(185,202,74)@rgba(0,0,0,0)</pref>
+  <pref name="Diff-Remove-Color" >rgb(88,43,43)</pref>
+  <pref name="Src-Editor-Current-Line-Color" >rgba(38,38,38,0.5)</pref>
+  <pref name="High-Importance-Messages-Highlight" >rgb(75,34,34)</pref>
+  <pref name="Src-Editor-Block-Variant" >DEFAULT@rgb(122,166,218)@rgba(0,0,0,0)</pref>
+  <pref name="Src-Editor-Code-Annotations-Variant-18" >DEFAULT@rgba(0,0,0,0)@rgba(38,38,38,0.5)</pref>
+  <pref name="Messages-Highlight-Color" >rgb(200,42,42)</pref>
+  <pref name="Editor/Fonts &amp; Colors:General/string escapes" >DEFAULT@rgb(218,116,149)@rgba(0,0,0,0)</pref>
+  <pref name="Info-Messages-Highlight" >rgba(15,53,188,0.47058823529400001)</pref>
+  <pref name="Src-Editor-Comments-Variant" >DEFAULT@rgb(150,152,150)@rgba(0,0,0,0)</pref>
+  <pref name="Src-Editor-Hyper-Links-Variant" >DEFAULT@rgb(213,78,83)@rgba(0,0,0,0)</pref>
+  <pref name="GPS6-Gtk-Theme-Name" >Adwaita (Dark)</pref>
+  <pref name="Plugins/dispatching/color" >rgb(46,52,56)</pref>
 </Prefs>
