@@ -38,6 +38,11 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 export GPS_HOME="$XDG_DATA_HOME/gps"
 
+# Not sure this is really necessary. Note wget-hsts isn't a history file
+# it's a list of servers approved for HSTS protocol! Doubt it'll come up
+# much...
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+
 export EDITOR="nvim";
 export VISUAL="nvim";
 export BAT_PAGER='less -RF'; # -F may cause problems for small files if not
