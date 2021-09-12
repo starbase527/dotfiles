@@ -8,6 +8,7 @@ config/astropy/*.cfg
 config/op
 config/openconnect
 config/expressvpn
+local/bin/anuvpn*
 local/bin/airport
 local/bin/jsc
 
