@@ -12,7 +12,9 @@ zstyle ':completion:*' menu select=4
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 
 # autoload -Uz compinit
-# compinit	# I've moved this to later after fpath is modified
+# compinit	# I've moved this to the seperate completions file
+#			# Since it needs to be run after the fpath is changed
+#			# But before running compdef
 # End of lines added by compinstall
 
 # ZSH Line editing: enter normal mode and press 'v' to open line in vim
@@ -53,10 +55,6 @@ if [ -d $PACKAGE_PREFIX/share/zsh-syntax-highlighting ]; then
 elif [ -d $PACKAGE_PREFIX/share/zsh/plugins/zsh-syntax-highlighting ]; then
 	source $PACKAGE_PREFIX/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi;
-
-# Finally, activate completions now that everything it depends on is defined
-autoload -Uz compinit
-compinit
 
 ##
 ## Finally, if creating the first login shell, not in ssh and not in tmux,

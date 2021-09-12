@@ -10,8 +10,13 @@ elif [ -d $PACKAGE_PREFIX/share/zsh/plugins/zsh-completions ]; then
 	fpath+=$PACKAGE_PREFIX/share/zsh/plugins/zsh-completions
 fi;
 
-# Acticate my own completions
+# Acticate my own completions (BEFORE LOADING `compinit')
 fpath=(~/.config/zsh/completions $fpath)
+# Activate completions now that everything it depends on is defined
+autoload -Uz compinit
+compinit
+# Now compdef is available to us
+eval "$(op completion zsh)"; compdef _op op
 
 ZSHAUTO=/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 if [ -e $ZSHAUTO ]; then
