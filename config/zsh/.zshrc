@@ -23,7 +23,18 @@ bindkey -M vicmd v edit-command-line
 
 # I have to set the HISTFILE in zshrc instead of in zshenv
 # Since Apple has decided to override it in /etc/zshrc starting in Catalina
+# Maybe this is the best place to put it anyway
 export HISTFILE="${XDG_CACHE_HOME}/zsh/histfile"
+export HISTSIZE=5000
+export SAVEHIST=5000
+
+# Better history (https://jdhao.github.io/2021/03/24/zsh_history_setup/)
+# Also see man zshoptions SHARE_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_NO_STORE
+setopt HIST_REDUCE_BLANKS
+setopt SHARE_HISTORY
 
 # Better history navigation
 bindkey '^r' history-incremental-search-backward

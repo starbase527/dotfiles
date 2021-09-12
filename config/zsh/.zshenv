@@ -65,6 +65,10 @@ export HOMEBREW_NO_INSECURE_REDIRECT=1
 # IDL
 export IDL_STARTUP=${HOME}/IDL/idlstartup
 
+# Stop Apple Terminal from giving each window a unique history!!!
+# See /etc/zshrc_Apple_Terminal
+export SHELL_SESSION_HISTORY=0
+
 # Colorised man pages
 # Source: https://unix.stackexchange.com/questions/119/colors-in-man-pages
 export LESS_TERMCAP_mb=$(printf "\e[1;31m")
