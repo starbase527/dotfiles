@@ -29,4 +29,8 @@
         glob: true
         path: Services/*
         relative: false
+    ~/.local/bin/jsc:
+        path: /System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc
+        create: true
+        relative: false
 

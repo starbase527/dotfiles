@@ -7,4 +7,5 @@ config/astropy/*.cfg
 config/op
 config/openconnect
 local/bin/airport
+local/bin/jsc
 
